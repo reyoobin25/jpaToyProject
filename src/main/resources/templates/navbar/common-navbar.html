@@ -1,0 +1,26 @@
+		<!-- navbar bootstrap 부분 -->
+		<nav class="navbar navbar-default">
+		  <div class="container-fluid">
+		    <!-- Brand and toggle get grouped for better mobile display -->
+		    <div class="navbar-header">
+		      <a class="navbar-brand" href="/">HelloIX</a>
+		      <ul class="nav navbar-nav navbar-right">
+		        <li><a href="/product">상품</a></li>
+		      </ul>
+		    </div>
+		      {{^login}}
+		      <ul class="nav navbar-nav navbar-right">
+		        <li><a href="/user">JOIN</a></li>
+		      </ul>
+		      <ul class="nav navbar-nav navbar-right">
+		        <li><a href="/login/form">LOGIN</a></li>
+		      </ul>
+		      {{/login}}
+		      {{#login}}    
+		      <ul class="nav navbar-nav navbar-right">
+		        <li><a href="/logout">LOGOUT</a></li>
+		      </ul>
+		      {{/login}}
+		    </div><!-- /.navbar-collapse -->
+		  </div><!-- /.container-fluid -->
+		</nav>

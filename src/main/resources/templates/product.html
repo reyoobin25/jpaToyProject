@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>기본 템플릿</title>
+    <link href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+		{{> /navbar/common-navbar}}
+    <center><h3>상품  페이지</h3></center>
+   			   
+				{{#list}}
+				<div class="col-md-3 col-xs-6" style="padding: 5px;">
+					<div class="thumbnail">
+							<img style="width: 100%; height: 150px;" class="img-responsive" src="/img/{{getProductImg}}.jpg" alt="">
+						<div class="caption-full" style="width: 100%; height: 60px;">
+							<p>{{getProductName}}</p>
+							<strong class="pull-right">{{getProductPrice}}원</strong>
+							
+							<button  class="btn btn-default"
+							 onclick="window.location='http://localhost:8090/order/{{getId}}'">구입하기</button>
+							 
+						</div>
+					</div>
+				</div>
+				{{/list}}
+
+	
+
+    <script src="/webjars/jquery/3.3.1-1/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>기본 템플릿</title>
+    <link href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+<body>
+	{{> /navbar/common-navbar}}
+	<center><h3>주문 페이지</h3></center> 
+	{{#order}}
+	<div class="container">
+	<center><img style="width: 60%; height: 250px;" class="img-responsive" src="/img/{{getProductImg}}.jpg" alt=""></center>	
+		<div class="caption-full" style="width: 100%; height: 60px;">
+		상품 이름 : {{getProductName}}<br/>
+		상품 가격 : {{getProductPrice}}<br/>
+		<button type="button" class="btn btn-default" onclick="window.location='http://localhost:8090/order/buy/{{getId}}'">구매</button>
+		</div>
+	</div>
+	{{/order}}
+</body>
+</html>
