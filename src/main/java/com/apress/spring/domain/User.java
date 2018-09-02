@@ -19,6 +19,8 @@ public class User extends BaseEntity {
 	private String userName;
 	private String email;
 	
+	//사용자는 물건을 여러개 구매가 가능하니까 1:N 연결
+	
 	@OneToMany(mappedBy="user")
 	private List<Product> products;
 	

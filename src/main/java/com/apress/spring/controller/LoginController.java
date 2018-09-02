@@ -24,8 +24,8 @@ public class LoginController {
 	
 	@RequestMapping("/logout")
 	public String logout(HttpSession session) {
-		session.removeAttribute("login");
-		return "redirect:/";
+		session.removeAttribute("login"); //로그아웃 할 때 세션값 지워줄라고
+		return "redirect:/"; //리다이렉트되서 index페이지를 보여준다.
 	}
 	
 	@RequestMapping("/login")

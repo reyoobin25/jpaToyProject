@@ -25,9 +25,11 @@ public class OrderController {
 
 	@RequestMapping("/{productId}")
 	public String showOrder(@PathVariable Long productId, Model model, HttpSession session) {
+		//로그인되지 않아 사용자 세션이 null값인 경우 login페이지로 리다이렉션 한다.
 		if(session.getAttribute("login")==null||session.getAttribute("login")=="") {
 			return "redirect:/login/form";
 		}
+		//null값이 아니라면 order페이지로 간다.
 		Product product = productService.findByProductId(productId);
 		model.addAttribute("order", product);
 		return "order";
